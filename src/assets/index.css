@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .ButtonGreen {
+    @apply hover:border-2 border-green text-black bg-green rounded-full px-16 py-3 hover:text-green hover:bg-transparent transition-colors ease-in-out duration-700;
+  }
+
+  /* .btn-green{
+      @apply border-2 border-[#29b474] rounded-md hover:bg-[rgba(41,180,116,0.05)]
+    } */
+  .hover {
+    @apply text-green transition-colors ease-in-out duration-700
+  }
+
+  /* .form-input {
+      @apply bg-[#222028] border border-transparent rounded-md focus:ring-0 focus:border-[#f9ab00] transition duration-300 focus:outline-none
+    }
+    .checkbox-input{
+      @apply bg-[#222028] rounded-sm  border border-transparent focus:ring-offset-0  focus:ring-0
+    } */
+}
+
+body {
+  background-color: #1f1f1f;
+}
