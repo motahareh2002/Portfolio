@@ -4,9 +4,14 @@
 
 @layer components {
   .ButtonGreen {
-    @apply hover:border-2 border-green text-black bg-green rounded-full px-16 py-3 hover:text-green hover:bg-transparent transition-colors ease-in-out duration-700;
+    @apply hover:border-2 border-green text-black bg-green rounded-full px-16 py-3 dark:hover:text-green hover:bg-transparent transition-colors ease-in-out duration-700;
   }
-
+  .Icons{
+    @apply border border-white dark:border-gray rounded-full bg-blackBg text-white dark:bg-transparent dark:text-gray p-2.5 mx-2
+  }
+  .margin{
+    @apply mx-3 sm:mx-20
+  }
   /* .btn-green{
       @apply border-2 border-[#29b474] rounded-md hover:bg-[rgba(41,180,116,0.05)]
     } */
