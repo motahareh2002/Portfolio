@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import AOS from "aos";
-import { useDark, useToggle } from "@vueuse/core";
+
 import LeftSlide from '@/components/LeftSlide.vue';
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
-// @click="toggleDark()"
+import AllMenus from '@/components/menu/AllMenus.vue';
+
 onMounted(() => {
   AOS.init();
 });
@@ -14,6 +13,7 @@ onMounted(() => {
 <template>
   <div>
     <!-- <Button @click="toggleDark()" class="dark:text-white">change Mood</Button> -->
+    <AllMenus />
     <LeftSlide />
   </div>
 </template>
