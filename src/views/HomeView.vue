@@ -15,5 +15,6 @@ onMounted(() => {
     <!-- <Button @click="toggleDark()" class="dark:text-white">change Mood</Button> -->
     <AllMenus />
     <LeftSlide />
+    
   </div>
 </template>
