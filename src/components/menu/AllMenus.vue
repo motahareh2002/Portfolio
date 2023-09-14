@@ -6,8 +6,8 @@ import DesktopMenu from "./DesktopMenu.vue";
 
 <template>
   <div>
-    <MobileMenu  class="md:hidden"/>
-    <desktop-menu class="hidden md:block" />
+    <MobileMenu  class="lg:hidden"/>
+    <desktop-menu class="hidden lg:block" />
   </div>
 </template>
 

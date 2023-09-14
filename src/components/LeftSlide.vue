@@ -17,7 +17,7 @@ import TwitterIcon from "./icons/TwitterIcon.vue";
       <img
         src="https://www.wpriverthemes.com/HTML/drake/assets/images/me.jpg"
         alt=""
-        class="rounded-3xl w-2/3"
+        class="rounded-3xl w-[250px] h-[250px]"
       />
       <span class="mt-8 dark:text-white">Motaharehjafi@gmail.com</span>
       <span class="mt-3 text-lg dark:text-white">Developer in Mashahd , Iran</span>
