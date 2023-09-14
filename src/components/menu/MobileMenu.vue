@@ -20,7 +20,7 @@ const ToToggle = () => {
     <img
       src="../../assets/light.svg"
       alt=""
-      v-if="!isToggle"
+      v-if="isToggle"
       @click="
         () => {
           toggleDark();
@@ -31,7 +31,7 @@ const ToToggle = () => {
     <img
       src="@/assets/dark.svg"
       alt=""
-      v-if="isToggle"
+      v-if="!isToggle"
       @click="
         () => {
           toggleDark();
