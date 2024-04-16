@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Navigation } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "@/assets/style.css";
 import arrow from "@/assets/arrow-down.svg";
 import trade from "@/assets/trade.svg";
 import cash from "@/assets/cash.svg";
@@ -148,50 +156,48 @@ import bg from "@/assets/bg2.svg";
         <!-- main -->
         <main class="flex items-center md:mr-[60px] xl:mr-[150px]">
           <img :src="login" alt="" class="md:w-5/12 lg:w-5/12" />
-          <div class="md:w-7/12 lg:w-7/12 flex flex-col lg:ml-32">
-            <span class="font-black text-white md:text-[16px] lg:text-[25px]"
-              >How It Works Section</span
+          <div>
+            <swiper
+              :slidesPerView="1"
+              :loop="true"
+              :pagination="{
+                clickable: true,
+              }"
+              :navigation="{
+                nextEl: '.next',
+                prevEl: '.prev',
+              }"
+              :modules="[Pagination, Navigation]"
+              class="mySwiper md:w-[350px] lg:w-[600px]"
             >
-            <span
-              class="font-semibold text-white md:text-[28px] lg:text-[42px] md:mt-5 md:mb-1"
-              >Create Your Page</span
-            >
-            <p class="text-[#898CA9] md:text-[10px] lg:text-[16px]">
-              Sign up and set up your personalized link hub effortlessly
-            </p>
-            <button
-              class="rounded-[10px] text-[#FFFFFF] border md:w-1/3 xl:w-1/5 md:py-2.5 md:px-4 lg:py-3.5 md:text-[13px] lg:text-[13px] md:mt-5"
-            >
-              Get Started
-            </button>
-            <div class="my-5 flex justify-between items-center">
-              <div class="flex items-center">
-                <div
-                  style="
-                    background: linear-gradient(
-                      87.6deg,
-                      #933ffd 2.08%,
-                      #18c7ff 95.27%
-                    );
-                  "
-                  class="w-10 lg:w-12 h-1 lg:h-2 rounded-lg mr-1"
-                ></div>
-                <span
-                  class="bg-[#D9D9D9] p-0.5 lg:p-1 mx-0.5 rounded-full"
-                ></span>
-                <span
-                  class="bg-[#D9D9D9] p-0.5 lg:p-1 mx-0.5 rounded-full"
-                ></span>
-                <span
-                  class="bg-[#D9D9D9] p-0.5 lg:p-1 mx-0.5 rounded-full"
-                ></span>
-                <span
-                  class="bg-[#D9D9D9] p-0.5 lg:p-1 mx-0.5 rounded-full"
-                ></span>
-              </div>
+              <swiper-slide v-for="i in 5" :key="i"
+                ><div class="flex flex-col items-start lg:ml-32">
+                  <span
+                    class="font-black text-white md:text-[16px] lg:text-[25px]"
+                    >How It Works Section</span
+                  >
+                  <span
+                    class="font-semibold text-white md:text-[28px] lg:text-[42px] md:mt-5 md:mb-1"
+                    >Create Your Page</span
+                  >
+                  <p class="text-[#898CA9] md:text-[10px] lg:text-[16px]">
+                    Sign up and set up your personalized link hub effortlessly
+                  </p>
+                  <button
+                    class="rounded-[10px] text-[#FFFFFF] border md:w-1/3 xl:w-1/5 md:py-2.5 md:px-4 lg:py-3.5 md:text-[13px] lg:text-[13px] md:mt-5"
+                  >
+                    Get Started
+                  </button>
+                </div></swiper-slide
+              >
+            </swiper>
+            <div class="my-5 flex justify-end items-center">
+              <!-- <div class="swiper-pagination" ></div> -->
               <div class="flex items-center">
                 <div class="mr-5">
-                  <button class="bg-[#696969] hover:bg-[#a3a3a2] rounded-full">
+                  <button
+                    class="bg-[#696969] prev hover:bg-[#a3a3a2] rounded-full"
+                  >
                     <img
                       :src="arrow"
                       alt=""
@@ -199,7 +205,7 @@ import bg from "@/assets/bg2.svg";
                     />
                   </button>
                   <button
-                    class="bg-[#696969] hover:bg-[#a3a3a2] rounded-full ml-2"
+                    class="bg-[#696969] next hover:bg-[#a3a3a2] rounded-full ml-2"
                   >
                     <img :src="arrow" alt="" class="w-3 lg:w-5 p-1" />
                   </button>
@@ -208,6 +214,7 @@ import bg from "@/assets/bg2.svg";
               </div>
             </div>
           </div>
+          <!--  -->
         </main>
       </div>
     </div>
@@ -215,7 +222,7 @@ import bg from "@/assets/bg2.svg";
       <img :src="bg3" alt="" class="" />
       <!-- text -->
       <div
-        class="md:pb-20 md:mx-auto md:w-9/12 lg:w-8/12 absolute top-44 left-0 right-0 text-center mr-auto ml-auto"
+        class="md:pb-20 md:mx-auto md:w-9/12 lg:w-8/12 absolute md:top-[400px] left-0 right-0 text-center mr-auto ml-auto"
       >
         <p
           class="font-black text-white text-center md:text-[15px] xl:text-[20px]"
@@ -233,7 +240,7 @@ import bg from "@/assets/bg2.svg";
         </a>
       </div>
       <div
-        class="absolute top-1/3 md:ml-[80px] xl:ml-[150px] flex justify-between items-center"
+        class="absolute md:top-1/2 lg:top-1/3 md:ml-[80px] xl:ml-[150px] flex justify-between items-center"
       >
         <div class="">
           <p
@@ -292,9 +299,25 @@ import bg from "@/assets/bg2.svg";
 </template>
 
 
-<style>
+<style >
 .bg {
   background: url("/src/assets/bg.png") 20% 50%;
   background-size: cover;
+}
+.swiper-pagination {
+  height: 100%;
+  top: 20px;
+}
+.swiper-pagination-bullet {
+  background-color: #D9D9D9;
+  width: 5px;
+  height: 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: linear-gradient(87.6deg, #933ffd 2.08%, #18c7ff 95.27%);
+  width: 50px;
+  height: 5px;
+  border-radius: 10px;
 }
 </style>
