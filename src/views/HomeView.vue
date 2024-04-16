@@ -22,6 +22,8 @@ import youtube from "@/assets/youtube.svg";
 import snapchat from "@/assets/snapchat.svg";
 import face from "@/assets/facebook.svg";
 import bg from "@/assets/bg2.svg";
+import Footer from "@/components/Footer.vue";
+import Header from "@/components/Header.vue";
 </script>
 
 <template>
@@ -30,47 +32,7 @@ import bg from "@/assets/bg2.svg";
       <img :src="bg" alt="" class="w-full" />
       <div class="absolute top-0">
         <!-- header -->
-        <header
-          class="text-[#FFFFFF] md:mx-[60px] xl:mx-[190px] md:pt-[29px] md:flex justify-between items-center"
-        >
-          <div>
-            <span class="text-[20px]">GEEG</span>
-            <span class="text-[9px]">.me</span>
-          </div>
-          <!-- menu -->
-          <ul
-            class="flex items-center md:text-[12px] lg:text-[14px] font-semibold"
-          >
-            <li class="md:mx-2">Templates</li>
-            <li class="md:mx-2 flex">
-              Discover <img :src="arrow" alt="" class="ml-1" />
-            </li>
-            <li class="md:mx-2">Pricing</li>
-            <li class="md:mx-2 flex">
-              Learn<img :src="arrow" alt="" class="ml-1" />
-            </li>
-          </ul>
-          <!-- btns -->
-          <div class="font-semibold">
-            <button
-              class="border border-[#FFFFFF] lg:px-5 lg:py-2 rounded-[10px] md:py-1.5 md:px-3 md:text-[13px] md:mr-2"
-            >
-              Sign in
-            </button>
-            <button
-              style="
-                background: linear-gradient(
-                  225deg,
-                  #18c8ff 14.89%,
-                  #933ffe 85.85%
-                );
-              "
-              class="lg:px-5 lg:py-2 text-[#FFFFFF] rounded-[10px] md:py-1.5 md:px-3 md:text-[13px]"
-            >
-              Sign up
-            </button>
-          </div>
-        </header>
+        <Header />
 
         <!-- banner -->
         <div class="md:mt-32 lg:mt-44 xl:mt-56 flex flex-col items-center">
@@ -169,7 +131,7 @@ import bg from "@/assets/bg2.svg";
                 clickable: true,
               }"
               :modules="[Pagination, Navigation]"
-              class="mySwiper md:w-[350px]  lg:w-[600px]"
+              class="mySwiper md:w-[350px] lg:w-[600px]"
             >
               <swiper-slide v-for="i in 5" :key="i"
                 ><div class="flex flex-col items-start lg:ml-32">
@@ -271,44 +233,21 @@ import bg from "@/assets/bg2.svg";
         <img :src="bag" alt="" class="w-1/2" />
       </div>
     </div>
-    <div
-      style="
-        background: rgb(29, 64, 18);
-        background: linear-gradient(
-          25deg,
-          rgba(29, 64, 18, 1) 0%,
-          rgba(11, 11, 15, 1) 15%
-        );
-      "
-      class="flex justify-center items-center flex-col py-10"
-    >
-      <p class="font-black text-white">
-        Links to your social media profiles for further engagement.
-      </p>
-      <div class="flex mt-3">
-        <img :src="face" alt="" class="mx-1 w-5" />
-        <img :src="instagram" alt="" class="mx-1 w-5" />
-        <img :src="youtube" alt="" class="mx-1 w-5" />
-        <img :src="snapchat" alt="" class="mx-1 w-5" />
-      </div>
-      <p class="text-[#898CA9] mt-10">
-        <span>Unsubscribe at any time.</span>
-        <span class="font-bold"> Privacy policy↗</span>
-      </p>
-    </div>
+    <Footer />
   </div>
 </template>
 
 
-<style >
+<style>
 .bg {
   background: url("/src/assets/bg.png") 20% 50%;
   background-size: cover;
 }
+
 .swiper-pagination {
   height: 100%;
   position: absolute;
-  top: 200px;
+  top: 500px;
 }
 .swiper-pagination-bullet {
   background-color: #d9d9d9;
