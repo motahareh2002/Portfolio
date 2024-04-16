@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination, Navigation } from "swiper/modules";
 // Import Swiper styles
@@ -156,19 +157,19 @@ import bg from "@/assets/bg2.svg";
         <!-- main -->
         <main class="flex items-center md:mr-[60px] xl:mr-[150px]">
           <img :src="login" alt="" class="md:w-5/12 lg:w-5/12" />
-          <div>
+          <div class="ml-10 lg:-ml-20">
             <swiper
               :slidesPerView="1"
               :loop="true"
-              :pagination="{
-                clickable: true,
-              }"
               :navigation="{
                 nextEl: '.next',
                 prevEl: '.prev',
               }"
+              :pagination="{
+                clickable: true,
+              }"
               :modules="[Pagination, Navigation]"
-              class="mySwiper md:w-[350px] lg:w-[600px]"
+              class="mySwiper md:w-[350px]  lg:w-[600px]"
             >
               <swiper-slide v-for="i in 5" :key="i"
                 ><div class="flex flex-col items-start lg:ml-32">
@@ -184,7 +185,7 @@ import bg from "@/assets/bg2.svg";
                     Sign up and set up your personalized link hub effortlessly
                   </p>
                   <button
-                    class="rounded-[10px] text-[#FFFFFF] border md:w-1/3 xl:w-1/5 md:py-2.5 md:px-4 lg:py-3.5 md:text-[13px] lg:text-[13px] md:mt-5"
+                    class="rounded-[10px] text-[#FFFFFF] border md:w-1/3 xl:w-1/4 md:py-2.5 md:px-4 lg:py-3.5 md:text-[13px] lg:text-[13px] md:mt-5"
                   >
                     Get Started
                   </button>
@@ -192,7 +193,7 @@ import bg from "@/assets/bg2.svg";
               >
             </swiper>
             <div class="my-5 flex justify-end items-center">
-              <!-- <div class="swiper-pagination" ></div> -->
+              <!-- <div class="swiper-pagination"></div> -->
               <div class="flex items-center">
                 <div class="mr-5">
                   <button
@@ -306,10 +307,11 @@ import bg from "@/assets/bg2.svg";
 }
 .swiper-pagination {
   height: 100%;
-  top: 20px;
+  position: absolute;
+  top: 200px;
 }
 .swiper-pagination-bullet {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   width: 5px;
   height: 5px;
 }
