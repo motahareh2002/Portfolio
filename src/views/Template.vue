@@ -3,6 +3,8 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Browse from "@/components/Browse.vue";
 import CartImg from "@/components/CardImg.vue";
+import img from "@/assets/Rectangle 39235.svg";
+import img2 from "@/assets/Rectangle 39237.svg";
 const browses = [
   "Fashion",
   "Health and Fitness",
@@ -12,6 +14,108 @@ const browses = [
   "Small Business",
   "Social Media",
   "Sport",
+];
+const carts = [
+  {
+    id: 1,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 2,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 3,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 4,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 5,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 6,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 7,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+
+  {
+    id: 8,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
+  {
+    id: 9,
+    imgBack: img,
+    avator: img2,
+    title: "Sara Anderson",
+    description: "fitness model, and personal trainer",
+    social1: "Geegcoin.com",
+    social2: "Instagram.com",
+    social3: "Youtube.com",
+    social4: "Contact",
+  },
 ];
 </script>
 
@@ -43,12 +147,24 @@ const browses = [
         </div>
       </div>
     </div>
-    <div
-      class="grid grid-cols-1 mt-32 gap-10 md:mx-[60px] xl:mx-[190px] md:grid-cols-2 lg:grid-cols-3"
-    >
-      <CartImg v-for="i in 9" :key="i" />
+    <div class="bgTemplateMain">
+      <div
+        class="grid grid-cols-1 mt-32 gap-10 md:mx-[60px] xl:mx-[190px] md:grid-cols-2 lg:grid-cols-3"
+      >
+        <CartImg
+          v-for="i in carts"
+          :key="i.id"
+          :imgBack="i.imgBack"
+          :avator="i.avator"
+          :title="i.title"
+          :description="i.description"
+          :social1="i.social1"
+          :social2="i.social2"
+          :social3="i.social3"
+          :social4="i.social4"
+        />
+      </div>
     </div>
-
     <Footer class="mt-20" />
   </div>
 </template>
@@ -59,16 +175,19 @@ const browses = [
   background: url("/src/assets/bgTemplate1.svg");
   background-size: cover;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 1px;
 }
-::-webkit-scrollbar-track{
-  background-color:#0b0b0f ;
+::-webkit-scrollbar-track {
+  background-color: #0b0b0f;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #181818;
   border-radius: 10px;
   width: 5px;
 }
-
+.bgTemplateMain {
+  background: url("/src/assets/bgTemplateMain.svg") no-repeat;
+  background-size: contain;
+}
 </style>
