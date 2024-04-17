@@ -73,10 +73,10 @@ import apple from "@/assets/apple.svg";
               <img :src="google" alt="" />
               <span class="text-[14px] ml-2">Sign in with Google</span>
             </button>
-            <button class="bg-[#F6F6F6] flex items-center justify-center p-2 rounded-md ">
+            <button class="bg-[#F6F6F6] flex items-center justify-center py-2.5 rounded-md ">
               <img :src="Facebook" alt="" />
             </button>
-            <button class="bg-[#F6F6F6] flex items-center justify-center p-2 rounded-md">
+            <button class="bg-[#F6F6F6] flex items-center justify-center py-2.5 rounded-md">
               <img :src="apple" alt="" />
             </button>
           </div>
