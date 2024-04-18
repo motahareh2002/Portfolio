@@ -104,6 +104,10 @@ const info = {
               </div>
             </div>
           </div>
+
+          <button class="absolute bottom-0 right-1/4">
+            <img src="../assets/btnplus.svg" alt=" " class="w-24">
+          </button>
         </div>
         <UserInfro
           class="fixed right-0 top-14 bottom-0"
