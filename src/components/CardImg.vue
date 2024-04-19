@@ -25,41 +25,41 @@ defineProps({
       <div class="">
         <img
           :src="`${avator}`"
-          class="w-32 absolute top-20 lg:top-10 left-0 right-0 mx-auto"
+          class="w-16 sm:w-32 absolute top-5 md:top-20 lg:top-10 left-0 right-0 mx-auto"
         />
         <span
-          class="text-white mt-10 font-medium text-[26px] absolute top-56 lg:top-32 xl:top-44 left-0 right-0 mx-auto text-center"
+          class="text-white mt-10 font-medium md:text-[26px] absolute top-16 sm:top-32 md:top-56 lg:top-32 xl:top-44 left-0 right-0 mx-auto text-center"
           >{{title}}</span
         >
         <span
-          class="text-white mt-24 text-[15px] absolute top-56 lg:top-36 xl:top-44 left-0 right-0 mx-auto text-center"
+          class="text-white mt-24  text-[10px] sm:text-[15px] absolute top-12 sm:top-32 md:top-56 lg:top-36 xl:top-44 left-0 right-0 mx-auto text-center"
         >
           {{description}}
         </span>
         <div
-          class="flex flex-col absolute md:top-1/2 lg:top-5/12 xl:top-8/12 md:mt-16 lg:mt-5 xl:mt-10 left-0 right-0 mx-auto"
+          class="flex flex-col absolute top-[60%] md:top-1/2 lg:top-5/12 xl:top-8/12 md:mt-16 lg:mt-5 xl:mt-10 left-0 right-0 mx-auto"
         >
           <span
-            class="bg-[#000000] rounded-[55px] text-white md:p-3 xl:p-4 md:mt-2 text-center w-3/4 mx-auto"
+            class="bg-[#000000] rounded-[55px] text-[12px] p-1 text-white md:p-3 xl:p-4 mt-1 md:mt-2 text-center w-3/4 mx-auto"
             >{{social1}}</span
           >
           <span
-            class="bg-[#000000] rounded-[55px] text-white md:p-3 xl:p-4 md:mt-2 text-center w-3/4 mx-auto"
+            class="bg-[#000000] rounded-[55px] text-[12px] p-1 text-white md:p-3 xl:p-4 mt-1 md:mt-2 text-center w-3/4 mx-auto"
             >{{social2}}</span
           >
           <span
-            class="bg-[#000000] rounded-[55px] text-white md:p-3 xl:p-4 md:mt-2 text-center w-3/4 mx-auto"
+            class="bg-[#000000] rounded-[55px] text-[12px] p-1 text-white md:p-3 xl:p-4 mt-1 md:mt-2 text-center w-3/4 mx-auto"
             >{{social3}}</span
           >
           <span
-            class="bg-[#000000] rounded-[55px] text-white md:p-3 xl:p-4 md:mt-2 text-center w-3/4 mx-auto"
+            class="bg-[#000000] rounded-[55px] text-[12px] p-1 text-white md:p-3 xl:p-4 mt-1 md:mt-2 text-center w-3/4 mx-auto"
             >{{social4}}</span
           >
         </div>
       </div>
     </div>
     <div
-      class="absolute rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center inset-0 bg-[#D8D8D8] bg-opacity-50"
+      class="absolute rounded-[20px] sm:rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center inset-0 bg-[#D8D8D8] bg-opacity-50"
     >
       <span class="text-black text-lg font-black text-[35px]">Try it</span>
     </div>

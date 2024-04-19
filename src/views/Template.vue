@@ -124,20 +124,26 @@ const carts = [
     <Header />
     <div class="bg1 md:h-[600px] lg:h-[700px] xl:h-[600px]">
       <p
-        class="text-white text-center md:pt-40 md:text-[30px] lg:text-[50px] md:w-3/4 lg:w-8/12 mx-auto font-black"
+        class="text-white text-center pt-40 text-[30px] lg:text-[50px] w-[80%] md:w-3/5 lg:w-8/12 mx-auto font-black"
       >
-        A Linktree template to suit every brand and creator
+        A GeeG Me link template to suit every brand and creator
       </p>
-      <p class="text-center text-white md:w-3/4 lg:w-8/12 mx-auto md:pt-14">
-        Different Link Apps, integrations and visual styles can help you create
-        a Linktree that looks and feels like you and your brand. Explore our
-        library of custom templates to grow and connect with your audience even
-        more easily!
+      <p
+        class="text-center text-[12px] w-[80%] pt-8 mb-28 text-white md:w-3/4 lg:w-8/12 mx-auto md:pt-14"
+      >
+        "Discover a world of customization and personalization with GeeG.Me. Our
+        diverse range of link apps, integrations, and visual styles empowers you
+        to craft a link hub that reflects your unique personality and brand
+        identity. Explore our extensive library of custom templates to
+        effortlessly grow your online presence and connect with your audience in
+        a way that truly resonates."
       </p>
-      <div class="overflow-y-auto scrollbar-hide">
-        <span>Browse by</span>
+      <span class="text-white mx-10 md:ml-32 xl:ml-[200px]">Browse by</span>
+      <div
+        class="overflow-y-auto w-10/12 sm:w-11/12 md:w-9/12 scrollbar-hide ml-10 md:ml-32 xl:ml-[200px]"
+      >
         <div
-          class="flex my-10 xl:ml-[10%] md:-mr-96 md:overflow-y-auto md:scrollbar-hide lg:overflow-hidden"
+          class="flex my-10 md:-mr-96 -mr-[500px] md:overflow-y-auto md:scrollbar-hide"
         >
           <Browse
             :title="browse"
@@ -149,7 +155,7 @@ const carts = [
     </div>
     <div class="bgTemplateMain">
       <div
-        class="grid grid-cols-1 mt-32 gap-10 md:mx-[60px] xl:mx-[190px] md:grid-cols-2 lg:grid-cols-3"
+        class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 mx-5 sm:mx-10 mt-32 sm:gap-10 md:mx-[60px] xl:mx-[190px]"
       >
         <CartImg
           v-for="i in carts"
@@ -176,15 +182,17 @@ const carts = [
   background-size: cover;
 }
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 10px; 
+  scrollbar-width: thin;/* width of the entire scrollbar */
 }
+
 ::-webkit-scrollbar-track {
-  background-color: #0b0b0f;
+  background: #0b0b0f; /* color of the tracking area */
 }
+
 ::-webkit-scrollbar-thumb {
-  background-color: #181818;
-  border-radius: 10px;
-  width: 5px;
+  background-color: #1d1d1d; /* color of the scroll thumb */
+  border-radius: 20px; 
 }
 .bgTemplateMain {
   background: url("/src/assets/bgTemplateMain.svg") no-repeat;

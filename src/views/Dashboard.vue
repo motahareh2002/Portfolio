@@ -20,13 +20,13 @@ const info = {
 
 
 <template>
-  <div class="flex items-start ">
+  <div class="flex items-start">
     <MenuLeft class="" />
     <div class="w-full">
       <HeaderPanel :title="title" :is-pic="true" />
-      <div class="w-[73%] ">
-        <div class="overflow-y-scroll h-[540px] xl:h-[620px] mt-5 px-3">
-          <div class="flex items-center">
+      <div class="md:w-[73%]">
+        <div class="overflow-y-scroll md:h-[540px] xl:h-[620px] my-5 px-3">
+          <div class="hidden md:flex items-center">
             <div class="relative w-1/5 lg:w-2/12">
               <img :src="avator" alt="" class="md:w-20" />
               <button
@@ -60,26 +60,27 @@ const info = {
               </div>
             </form>
           </div>
-          <hr class="mt-5 border border-[#cdcdcc]" />
+          <hr class="hidden md:block mt-5 border border-[#cdcdcc]" />
           <div>
             <div
               class="flex flex-col lg:items-center lg:flex-row lg:justify-between"
             >
-              <div class="flex justify-between my-3">
-                <img src="../assets/Group 253.svg" class="md:w-10 md:mx-1" />
-                <img src="../assets/Group 255.svg" class="md:w-10 md:mx-1" />
-                <img src="../assets/Group 252.svg" class="md:w-10 md:mx-1" />
-                <img src="../assets/Group 251.svg" class="md:w-10 md:mx-1" />
-                <img src="../assets/Group 250.svg" class="md:w-10 md:mx-1" />
-                <img src="../assets/Group 254.svg" class="md:w-10 md:mx-1" />
+              <div class="flex justify-between md:my-3">
+                <img src="../assets/Group 253.svg" class="w-10 md:mx-1" />
+                <img src="../assets/Group 255.svg" class="w-10 md:mx-1" />
+                <img src="../assets/Group 252.svg" class="w-10 md:mx-1" />
+                <img src="../assets/Group 251.svg" class="w-10 md:mx-1" />
+                <img src="../assets/Group 250.svg" class="w-10 md:mx-1" />
+                <img src="../assets/Group 254.svg" class="w-10 md:mx-1" />
               </div>
               <button
-                class="bg-[#222024] self-end lg:self-auto text-white flex justify-between p-2 lg:px-3 lg:py-2.5 rounded-lg"
+                class="bg-[#222024] hidden self-end lg:self-auto text-white md:flex justify-between p-2 lg:px-3 lg:py-2.5 rounded-lg"
               >
                 <img src="../assets/send-2.svg" alt="" />
                 <span>Dig GeegCoin!</span>
               </button>
             </div>
+            <hr class="md:hidden block my-5 border border-[#cdcdcc]" />
             <div class="">
               <div
                 v-for="i in 10"
@@ -95,8 +96,12 @@ const info = {
                   >
                 </div>
                 <div class="flex items-center">
-                  <input type="checkbox" class="switch" />
-                  <img src="../assets/trash.svg" alt="" class="w-5 mx-2" />
+                  <input type="checkbox" class="switch mx-2 md:mx-0" />
+                  <img
+                    src="../assets/trash.svg"
+                    alt=""
+                    class="w-5 mx-2 hidden md:block"
+                  />
                   <button>
                     <img src="../assets/more.svg" alt="" />
                   </button>
@@ -104,13 +109,18 @@ const info = {
               </div>
             </div>
           </div>
-
-          <button class="absolute bottom-0 right-1/4">
-            <img src="../assets/btnplus.svg" alt=" " class="w-24">
+          <button class="absolute bottom-0 right-1/4 hidden md:block">
+            <img src="../assets/btnplus.svg" alt=" " class="w-24" />
+          </button>
+          <button
+            class="bg-[#222024] w-full mt-5 text-white flex justify-center p-3 md:hidden rounded-[62px]"
+          >
+            <img src="../assets/send-2.svg" alt="" class="mx-2" />
+            <span>Dig GeegCoin!</span>
           </button>
         </div>
         <UserInfro
-          class="fixed right-0 top-14 bottom-0"
+          class="fixed right-0 top-14 bottom-0 hidden md:block"
           :avator="info.avator"
           :title="info.title"
           :description="info.description"
@@ -119,6 +129,15 @@ const info = {
           :social3="info.social3"
           :social4="info.social4"
         />
+      </div>
+
+      <div class="flex justify-end mx-5 mt-20 mb-5 md:hidden">
+        <button
+          class="flex rounded-[30px] px-5 py-3  bg-[#000000] text-white"
+        >
+          <img src="../assets/e2ye.svg" alt="" class="mx-2" />
+          <span>Preview</span>
+        </button>
       </div>
     </div>
   </div>
@@ -167,7 +186,7 @@ const info = {
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0B0B0F #ffffff;
+  scrollbar-color: #0b0b0f #ffffff;
 }
 
 /* Chrome, Edge, and Safari */
@@ -180,7 +199,7 @@ const info = {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #0B0B0F;
+  background-color: #0b0b0f;
   border-radius: 10px;
   border: 5px inset #ffffff;
 }
