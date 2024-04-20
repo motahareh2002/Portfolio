@@ -4,6 +4,11 @@ import Template from '../views/Template.vue'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import NewLink from '../views/NewLink.vue'
+import NewLink2 from '@/views/NewLink2.vue'
+import PreView from '@/views/PreView.vue'
+import SignUp from '@/views/SignUp.vue'
+import Register from '@/views/Register.vue'
+import TellUs from '@/views/TellUs.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +37,31 @@ const router = createRouter({
       name: 'newLink',
       component: NewLink,
     },
+    {
+      path: '/newLink2',
+      name: 'newLink2',
+      component: NewLink2,
+    },
+    {
+      path: '/preView',
+      name: 'preView',
+      component: PreView,
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignUp,
+    },
+    {
+      path : '/register',
+      name : '/register',
+      component : Register
+    },
+    {
+      path : '/tellUs',
+      name : '/tellUs',
+      component : TellUs
+    }
   ]
 })
 

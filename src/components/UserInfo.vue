@@ -1,6 +1,5 @@
 
 <script setup lang="ts">
-import img from "@/assets/userPic.svg";
 import instagram from "@/assets/instagram.svg";
 import youtube from "@/assets/youtube.svg";
 import snapchat from "@/assets/snapchat.svg";

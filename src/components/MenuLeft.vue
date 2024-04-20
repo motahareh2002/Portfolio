@@ -54,10 +54,12 @@ const route = useRoute().path;
           :class="{
             'bg-[#4285F4] rounded-[20px] mx-2': route === '/dashboard',
           }"
-          class="mt-5 w-full px-4 flex items-center  justify-center p-2 self-center"
+          class="mt-5 w-full px-4 flex items-center justify-center p-2 self-center"
         >
           <img :src="pause" alt="" class="w-5" />
-          <span class="ml-2 text-[12px]" v-if="route === '/dashboard'">links</span>
+          <span class="ml-2 text-[12px]" v-if="route === '/dashboard'"
+            >links</span
+          >
         </RouterLink>
         <li class="mt-5 w-full flex justify-center p-2 self-center">
           <img :src="bucket" alt="" class="w-5" />
@@ -65,12 +67,17 @@ const route = useRoute().path;
         <RouterLink
           to="/newlink"
           :class="{
-            'bg-[#4285F4] rounded-[20px] mx-2': route === '/newlink',
+            'bg-[#4285F4] rounded-[20px] mx-2':
+              route === '/newlink' || route === '/newlink2',
           }"
-          class="mt-5 w-full flex  items-center justify-center p-2 self-center"
+          class="mt-5 w-full flex items-center justify-center p-2 self-center"
         >
           <img src="../assets/add.svg" alt="" class="w-5" />
-          <span class="ml-2 text-[12px]" v-if="route === '/newlink'">Add</span>
+          <span
+            class="ml-2 text-[12px]"
+            v-if="route === '/newlink' || route === '/newlink2'"
+            >Add</span
+          >
         </RouterLink>
         <li class="mt-5 w-full flex justify-center p-2 self-center">
           <img :src="status" alt="" class="w-5" />
