@@ -5,7 +5,7 @@ import MenuLeft from "@/components/MenuLeft.vue";
 import HeaderPanel from "@/components/HeaderPanel.vue";
 import UserInfro from "@/components/UserInfo.vue";
 import img2 from "@/assets/Rectangle 39237.svg";
-import avator from "@/assets/Rectangle 39246.svg";
+import BtnPreview from "@/components/BtnPreview.vue";
 const title = ref("Add New Links");
 const info = {
   avator: img2,
@@ -25,8 +25,8 @@ const url = ref("");
     <MenuLeft class="" />
     <div class="w-full">
       <HeaderPanel :title="title" :is-pic="false" />
-      <div class="w-[73%]">
-        <div class="mt-5 px-3 overflow-y-scroll h-[540px] xl:h-[620px]">
+      <div class="md:w-[73%]">
+        <div class="mt-5 px-3 overflow-y-scroll h-[800px] md:h-[540px] xl:h-[620px]">
           <div class="flex items-center">
             <form action="" class="w-full flex justify-between items-center">
               <div class="flex flex-col w-3/4">
@@ -42,24 +42,28 @@ const url = ref("");
               </div>
               <button
                 :class="{ '!bg-[#0B0B0F]': url.length }"
-                class="bg-[#C9C9C9] mt-5 text-white w-1/4 ml-5 py-2 lg:p-3 rounded-[30px]"
+                class="bg-[#C9C9C9] mt-5 text-white w-1/4 ml-5 py-2.5 md:py-2 lg:p-3 rounded-[30px]"
               >
                 Add
               </button>
             </form>
           </div>
-          <hr class="mt-3 border border-[#cdcdcc]" />
+          <hr class="hidden md:block mt-3 border border-[#cdcdcc]" />
           <div class="mt-5">
             <div>
               <div class="flex justify-between">
-                <span class="md:text-[14px] lg:text-[18px] font-semibold"
+                <span class="text-[14px] lg:text-[18px] font-semibold"
                   >Inspired by your interests</span
                 >
                 <button class="p-1.5 bg-[#D9D9D966] rounded-full">
-                  <img src="../assets/search-normal.svg" alt="" class="w-5" />
+                  <img
+                    src="../assets/search-normal.svg"
+                    alt=""
+                    class="w-4 md:w-5"
+                  />
                 </button>
               </div>
-              <div class="flex my-5">
+              <div class="grid grid-cols-4 md:flex my-5">
                 <div class="flex flex-col items-center mr-5">
                   <button class="p-3 rounded-[18px] bg-[#F0F0F0] mx-auto">
                     <img
@@ -111,7 +115,7 @@ const url = ref("");
                   >Share content directly on your Geeg</span
                 >
               </div>
-              <div class="flex my-5">
+              <div class="grid grid-cols-4 gap-y-3 md:flex my-5">
                 <div class="flex flex-col items-center mr-5">
                   <button class="p-3 rounded-[18px] bg-[#F0F0F0] mx-auto">
                     <img
@@ -251,7 +255,7 @@ const url = ref("");
           </div>
         </div>
         <UserInfro
-          class="fixed right-0 top-14 bottom-0"
+          class="fixed right-0 top-14 bottom-0 hidden md:block"
           :avator="info.avator"
           :title="info.title"
           :description="info.description"
@@ -262,6 +266,7 @@ const url = ref("");
         />
       </div>
     </div>
+    <BtnPreview />
   </div>
 </template>
 
@@ -270,7 +275,7 @@ const url = ref("");
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #0B0B0F #ffffff;
+  scrollbar-color: #0b0b0f #ffffff;
 }
 
 /* Chrome, Edge, and Safari */
@@ -283,7 +288,7 @@ const url = ref("");
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #0B0B0F;
+  background-color: #0b0b0f;
   border-radius: 10px;
   border: 5px inset #ffffff;
 }

@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import MenuLeft from "@/components/MenuLeft.vue";
+import btnPreview from "@/components/BtnPreview.vue";
 import HeaderPanel from "@/components/HeaderPanel.vue";
 import UserInfro from "@/components/UserInfo.vue";
 import img2 from "@/assets/Rectangle 39237.svg";
@@ -20,12 +21,12 @@ const info = {
 
 
 <template>
-  <div class="flex items-start">
+  <div class="md:flex items-start">
     <MenuLeft class="" />
     <div class="w-full">
       <HeaderPanel :title="title" :is-pic="true" />
       <div class="md:w-[73%]">
-        <div class="overflow-y-scroll md:h-[540px] xl:h-[620px] my-5 px-3">
+        <div class="overflow-y-scroll h-[800px] md:h-[540px] xl:h-[620px] my-5 px-3">
           <div class="hidden md:flex items-center">
             <div class="relative w-1/5 lg:w-2/12">
               <img :src="avator" alt="" class="md:w-20" />
@@ -131,14 +132,7 @@ const info = {
         />
       </div>
 
-      <div class="flex justify-end mx-5 mt-20 mb-5 md:hidden">
-        <button
-          class="flex rounded-[30px] px-5 py-3  bg-[#000000] text-white"
-        >
-          <img src="../assets/e2ye.svg" alt="" class="mx-2" />
-          <span>Preview</span>
-        </button>
-      </div>
+      <btnPreview />
     </div>
   </div>
 </template>

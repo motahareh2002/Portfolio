@@ -21,7 +21,7 @@ const props = defineProps<{
       <span class="hidden md:block font-semibold md:text-[20px]">{{
         title
       }}</span>
-      <div class="flex flex-col md:hidden -ml-5">
+      <div class="flex flex-col md:hidden ">
         <span class="font-medium text-[16px] md:text-[14px]">Glink.com/Sara_Anderson</span>
         <span class="text-[12px] md:hidden"
           >Share your Geeg to your socials</span
@@ -38,7 +38,7 @@ const props = defineProps<{
           >
             <img :src="document" alt="" class="w-8" />
           </div>
-          <div class="bg-[#D9D9D9] md:hidden rounded-md ml-2" v-if="isPic">
+          <div class="bg-[#D9D9D9] md:hidden rounded-md ml-2" >
             <img :src="document" alt="" class="md:w-8" />
           </div>
         </div>
