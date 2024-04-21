@@ -15,22 +15,36 @@ const route = useRoute().path;
 <template>
   <div>
     <div
-      class="bg-[#0B0B0F] hidden h-screen w-[80px] py-5 md:flex flex-col justify-between items-center"
+      class="bg-[#0B0B0F] fixed hidden h-screen w-[80px] py-5 md:flex flex-col justify-between items-center"
     >
       <div class="flex flex-col items-center">
         <img :src="logo" alt="" class="w-10" />
         <img :src="avator" alt="" class="mt-8" />
         <ul class="flex flex-col items-center mt-5 w-full">
-          <li
-            class="mt-5 hover:bg-[#4285F4] w-full flex justify-center p-2 self-center"
+          <RouterLink
+            to="/dashboard"
+            :class="{
+              'bg-[#4285F4] mx-2': route === '/dashboard',
+            }"
+            class="mt-5 w-full hover:bg-[#4285F4] px-4 flex items-center justify-center p-2 self-center"
           >
             <img :src="pause" alt="" class="w-5" />
-          </li>
+          </RouterLink>
           <li
             class="mt-5 hover:bg-[#4285F4] w-full flex justify-center p-2 self-center"
           >
             <img :src="bucket" alt="" class="w-5" />
           </li>
+          <RouterLink
+            to="/newlink"
+            :class="{
+              'bg-[#4285F4]  mx-2':
+                route === '/newlink' || route === '/newlink2',
+            }"
+            class="mt-5 w-full hover:bg-[#4285F4] flex items-center justify-center p-2 self-center"
+          >
+            <img src="../assets/add.svg" alt="" class="w-5" />
+          </RouterLink>
           <li
             class="mt-5 hover:bg-[#4285F4] w-full flex justify-center p-2 self-center"
           >

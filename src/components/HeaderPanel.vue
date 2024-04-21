@@ -13,7 +13,7 @@ const props = defineProps<{
   <div
     class="md:bg-[#EFF0EC] "
   >
-    <div class="flex justify-between items-center p-5 md:pl-3 md:pr-20 md:py-3">
+    <div class="flex justify-between items-center p-5 md:pl-24 md:pr-20 md:py-3">
       <img
         src="/src/assets/Rectangle 39246.svg"
         class="w-14 md:hidden rounded-full"

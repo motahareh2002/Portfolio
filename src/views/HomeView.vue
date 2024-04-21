@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, Navigation } from "swiper/modules";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 
@@ -192,18 +192,18 @@ import Header from "@/components/Header.vue";
         </div>
         <!-- main -->
         <main
-          class="flex flex-col mt-32 sm:flex-row items-center md:mr-[60px] xl:mr-[150px]"
+          class="flex flex-col w-full mt-64 sm:mt-64 md:-mt-44 sm:flex-row items-center md:mr-[60px] xl:mr-[150px]"
         >
           <span
-            class="font-black sm:hidden text-white text-[22px] lg:text-[25px]"
+            class="font-black  sm:hidden text-white text-[22px] lg:text-[25px]"
             >How It Works Section</span
           >
           <img
             :src="login"
             alt=""
-            class="w-2/3 my-5 sm:w-5/12 md:w-5/12 lg:w-5/12 md:mt-0"
+            class=" my-5 -mt-56 self-start sm:w-5/12 md:w-5/12 lg:w-5/12 md:mt-0"
           />
-          <div class="ml-10 lg:-ml-20">
+          <div class="md:ml-5 lg:-ml-20">
             <swiper
               :slidesPerView="1"
               :loop="true"
@@ -211,11 +211,15 @@ import Header from "@/components/Header.vue";
                 nextEl: '.next',
                 prevEl: '.prev',
               }"
+              :autoplay="{
+                delay: 3000,
+                disableOnInteraction: false,
+              }"
               :pagination="{
                 clickable: true,
               }"
-              :modules="[Pagination, Navigation]"
-              class="mySwiper w-[300px] md:w-[350px] lg:w-[600px]"
+              :modules="[Pagination, Navigation,Autoplay]"
+              class="mySwiper -mt-48 md:mt-24 w-[310px] sm:w-[380px] md:w-[350px] lg:w-[600px]"
             >
               <swiper-slide v-for="i in 5" :key="i"
                 ><div class="flex flex-col items-start lg:ml-32">
@@ -224,10 +228,10 @@ import Header from "@/components/Header.vue";
                     >How It Works Section</span
                   >
                   <span
-                    class="font-semibold text-white text-[28px] lg:text-[42px] md:mt-5 mb-1"
+                    class="font-semibold text-white text-[28px]  lg:text-[42px] md:mt-5 mb-5 mf:mb-1"
                     >Create Your Page</span
                   >
-                  <p class="text-[#898CA9] text-[10px] lg:text-[16px]">
+                  <p class="text-[#898CA9] text-[12px] md:text-[10px] lg:text-[16px]">
                     Sign up and set up your personalized link hub effortlessly
                   </p>
                   <button
@@ -239,7 +243,6 @@ import Header from "@/components/Header.vue";
               >
             </swiper>
             <div class="my-5 flex justify-end items-center">
-              <!-- <div class="swiper-pagination"></div> -->
               <div class="flex items-center relative z-10 w-fit bottom-[45px]">
                 <div class="mr-5">
                   <button
@@ -248,16 +251,16 @@ import Header from "@/components/Header.vue";
                     <img
                       :src="arrow"
                       alt=""
-                      class="rotate-180 w-3 lg:w-5 p-1"
+                      class="rotate-180 w-4 lg:w-5 p-1"
                     />
                   </button>
                   <button
                     class="bg-[#696969] next hover:bg-[#a3a3a2] rounded-full ml-2"
                   >
-                    <img :src="arrow" alt="" class="w-3 lg:w-5 p-1" />
+                    <img :src="arrow" alt="" class="w-4 lg:w-5 p-1" />
                   </button>
                 </div>
-                <img :src="star" alt="" class="w-10" />
+                <img :src="star" alt="" class="w-10 hidden md:block" />
               </div>
             </div>
           </div>
@@ -318,22 +321,22 @@ import Header from "@/components/Header.vue";
       </div>
     </div>
     <div class="md:hidden">
-      <div class="bg-[#0b0b0f] py-56">
-        <p class="p-10  font-black text-white leading-6 text-center text-[12px]">
+      <div class="bg-[#0b0b0f] pt-56 sm:-mt-[80%] pb-32">
+        <p class="p-10  font-black  text-white leading-6 text-center text-[12px]">
           Join our pioneering social media platform where followers and
           influencers securely communicate, exchanging ideas and tasks, seizing
           the opportunity to earn cryptocurrency rewards along the way.
         </p>
         <a
           href="#"
-          class="text-[#B982FF] mt-4 text-[12px] flex items-center justify-center"
+          class="text-[#B982FF] mt-1 text-[12px] flex items-center justify-center"
         >
           <span>Start Earning Loyalty Coins Today!</span>
           <img :src="arrow2" alt="" />
         </a>
 
-        <img src="../assets/bag.2.svg" alt="" class="h-1/4  -mt-56 w-full sm:mx-auto sm:w-1/2" />
-        <div class="-mt-56 ml-[60px] sm:ml-[30%]">
+        <img src="../assets/bag.2.svg" alt="" class="h-[800px]  -mt-56 sm:-mt-10 w-full sm:mx-auto sm:w-1/2" />
+        <div class="-mt-56  ml-[60px] sm:ml-[30%]">
           <p
             class="font-black sm:w-2/3 text-white text-[25px] lg:text-[35px] mb-3 "
           >
@@ -373,7 +376,7 @@ import Header from "@/components/Header.vue";
   position: absolute;
   bottom: 0px !important;
   width: fit-content;
-  left: -120px !important;
+  left: -100px !important;
 }
 .swiper-pagination-bullet {
   background-color: #d9d9d9;

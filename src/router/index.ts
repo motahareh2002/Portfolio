@@ -9,6 +9,7 @@ import PreView from '@/views/PreView.vue'
 import SignUp from '@/views/SignUp.vue'
 import Register from '@/views/Register.vue'
 import TellUs from '@/views/TellUs.vue'
+import PanelLayout from '@/layouts/PanelLayout.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,16 +32,25 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
+      meta: {
+        layout: PanelLayout
+      },
     },
     {
       path: '/newLink',
       name: 'newLink',
       component: NewLink,
+      meta: {
+        layout: PanelLayout
+      },
     },
     {
       path: '/newLink2',
       name: 'newLink2',
       component: NewLink2,
+      meta: {
+        layout: PanelLayout
+      },
     },
     {
       path: '/preView',

@@ -59,7 +59,7 @@ const unShowMenu = () => {
     <!-- menu mobile -->
     <div
       v-if="isOpen"
-      class="text-[#FFFFFF] p-6 flex flex-col w-full md:hidden bg-[#0B0B0F] absolute top-0 left-0 z-50 h-[10000px]"
+      class="text-[#FFFFFF] p-6 flex flex-col w-full md:hidden bg-[#0B0B0F] fixed top-0 left-0 z-50 h-[10000px]"
     >
       <button class="self-end" @click="unShowMenu">
         <img src="../assets/menssu.svg" alt="" class="" />
