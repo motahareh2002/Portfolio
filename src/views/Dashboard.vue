@@ -1,115 +1,109 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import MenuLeft from "@/components/MenuLeft.vue";
-import btnPreview from "@/components/BtnPreview.vue";
 import HeaderPanel from "@/components/HeaderPanel.vue";
-import UserInfro from "@/components/UserInfo.vue";
-import img2 from "@/assets/Rectangle 39237.svg";
 import avator from "@/assets/Rectangle 39246.svg";
+import PanelLayout from "@/layouts/PanelLayout.vue";
 const title = ref("Links");
-const info = {
-  avator: img2,
-  title: "Sara Anderson",
-  description: "fitness model, and personal trainer",
-  social1: "Geegcoin.com",
-  social2: "Instagram.com",
-  social3: "Youtube.com",
-  social4: "Contact",
-};
 </script>
 
 
 <template>
-  <HeaderPanel :title="title" :is-pic="true"/>
-  <div class="md:w-[65%] lg:w-[67%] xl:w-[69%]  md:ml-20">
-    <div
-      class="overflow-y-scroll md:h-[520px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px] my-5 px-3"
-    >
-      <div class="hidden md:flex items-center">
-        <div class="relative w-1/5 lg:w-2/12">
-          <img :src="avator" alt="" class="md:w-20" />
-          <button class="bg-white rounded-full p-1 absolute -bottom-2 left-6">
-            <img src="../assets/brush.svg" alt="" />
-          </button>
-        </div>
-        <form class="w-4/5 lg:w-10/12 flex flex-col lg:flex-row ml-5 lg:ml-0">
-          <div class="flex flex-col w-full">
-            <label for="" class="mb-1 text-[13px] lg:text-[15px]">Title</label>
-            <input
-              type="text"
-              value="Sara Anderson"
-              class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-md text-[12px] lg:text-[14px]"
-            />
-          </div>
-          <div class="flex flex-col w-full mt-3 lg:mt-0 lg:ml-7">
-            <label for="" class="mb-1 text-[13px] lg:text-[15px]">Bio</label>
-            <input
-              type="text"
-              value="Fitness model, and personal trainer"
-              class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-md text-[12px] lg:text-[14px]"
-            />
-          </div>
-        </form>
-      </div>
-      <hr class="hidden md:block mt-5 border border-[#cdcdcc]" />
-      <div>
-        <div
-          class="flex flex-col lg:items-center lg:flex-row lg:justify-between"
-        >
-          <div class="flex justify-between md:my-3">
-            <img src="../assets/Group 253.svg" class="w-10 md:mx-1" />
-            <img src="../assets/Group 255.svg" class="w-10 md:mx-1" />
-            <img src="../assets/Group 252.svg" class="w-10 md:mx-1" />
-            <img src="../assets/Group 251.svg" class="w-10 md:mx-1" />
-            <img src="../assets/Group 250.svg" class="w-10 md:mx-1" />
-            <img src="../assets/Group 254.svg" class="w-10 md:mx-1" />
-          </div>
-          <button
-            class="bg-[#222024] hidden self-end lg:self-auto text-white md:flex justify-between p-2 lg:px-3 lg:py-2.5 rounded-lg"
-          >
-            <img src="../assets/send-2.svg" alt="" />
-            <span>Dig GeegCoin!</span>
-          </button>
-        </div>
-        <hr class="md:hidden block my-5 border border-[#cdcdcc]" />
-        <div class="">
-          <div
-            v-for="i in 10"
-            :key="i"
-            class="bg-[#EFF0EC] p-2 lg:p-3 rounded-md mt-3 flex justify-between"
-          >
-            <div class="flex items-center">
-              <button>
-                <img src="../assets/menu.svg" alt="" class="w-5" />
-              </button>
-              <span class="text-[14px] lg:text-[15px] ml-2">Useful linkS</span>
-            </div>
-            <div class="flex items-center">
-              <input type="checkbox" class="switch mx-2 md:mx-0" />
-              <img
-                src="../assets/trash.svg"
-                alt=""
-                class="w-5 mx-2 hidden md:block"
-              />
-              <button>
-                <img src="../assets/more.svg" alt="" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="absolute bottom-0 right-1/4 hidden md:block">
-        <img src="../assets/btnplus.svg" alt=" " class="w-24" />
-      </button>
-      <button
-        class="bg-[#222024] w-full mt-5 text-white flex justify-center p-3 md:hidden rounded-[62px]"
+  <PanelLayout>
+    <HeaderPanel :title="title" :is-pic="true" />
+    <div class="md:w-[65%] lg:w-[67%] xl:w-[69%] md:ml-20">
+      <div
+        class="overflow-y-scroll md:h-[520px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px] my-5 px-3"
       >
-        <img src="../assets/send-2.svg" alt="" class="mx-2" />
-        <span>Dig GeegCoin!</span>
-      </button>
+        <div class="hidden md:flex items-center">
+          <div class="relative w-1/5 lg:w-2/12">
+            <img :src="avator" alt="" class="md:w-20" />
+            <button class="bg-white rounded-full p-1 absolute -bottom-2 left-6">
+              <img src="../assets/brush.svg" alt="" />
+            </button>
+          </div>
+          <form class="w-4/5 lg:w-10/12 flex flex-col lg:flex-row ml-5 lg:ml-0">
+            <div class="flex flex-col w-full">
+              <label for="" class="mb-1 text-[13px] lg:text-[15px]"
+                >Title</label
+              >
+              <input
+                type="text"
+                value="Sara Anderson"
+                class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-md text-[12px] lg:text-[14px]"
+              />
+            </div>
+            <div class="flex flex-col w-full mt-3 lg:mt-0 lg:ml-7">
+              <label for="" class="mb-1 text-[13px] lg:text-[15px]">Bio</label>
+              <input
+                type="text"
+                value="Fitness model, and personal trainer"
+                class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-md text-[12px] lg:text-[14px]"
+              />
+            </div>
+          </form>
+        </div>
+        <hr class="hidden md:block mt-5 border border-[#cdcdcc]" />
+        <div>
+          <div
+            class="flex flex-col lg:items-center lg:flex-row lg:justify-between"
+          >
+            <div class="flex justify-between md:my-3">
+              <img src="../assets/Group 253.svg" class="w-10 md:mx-1" />
+              <img src="../assets/Group 255.svg" class="w-10 md:mx-1" />
+              <img src="../assets/Group 252.svg" class="w-10 md:mx-1" />
+              <img src="../assets/Group 251.svg" class="w-10 md:mx-1" />
+              <img src="../assets/Group 250.svg" class="w-10 md:mx-1" />
+              <img src="../assets/Group 254.svg" class="w-10 md:mx-1" />
+            </div>
+            <button
+              class="bg-[#222024] hidden self-end lg:self-auto text-white md:flex justify-between p-2 lg:px-3 lg:py-2.5 rounded-lg"
+            >
+              <img src="../assets/send-2.svg" alt="" />
+              <span>Dig GeegCoin!</span>
+            </button>
+          </div>
+          <hr class="md:hidden block my-5 border border-[#cdcdcc]" />
+          <div class="">
+            <div
+              v-for="i in 10"
+              :key="i"
+              class="bg-[#EFF0EC] p-2 lg:p-3 rounded-md mt-3 flex justify-between"
+            >
+              <div class="flex items-center">
+                <button>
+                  <img src="../assets/menu.svg" alt="" class="w-5" />
+                </button>
+                <span class="text-[14px] lg:text-[15px] ml-2"
+                  >Useful linkS</span
+                >
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" class="switch mx-2 md:mx-0" />
+                <img
+                  src="../assets/trash.svg"
+                  alt=""
+                  class="w-5 mx-2 hidden md:block"
+                />
+                <button>
+                  <img src="../assets/more.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="absolute bottom-0 right-1/4 hidden md:block">
+          <img src="../assets/btnplus.svg" alt=" " class="w-24" />
+        </button>
+        <button
+          class="bg-[#222024] w-full mt-5 text-white flex justify-center p-3 md:hidden rounded-[62px]"
+        >
+          <img src="../assets/send-2.svg" alt="" class="mx-2" />
+          <span>Dig GeegCoin!</span>
+        </button>
+      </div>
     </div>
-  </div>
+  </PanelLayout>
 </template>
 
 <style scoped>

@@ -14,7 +14,7 @@ const socials = ref([
 
 
 <template>
-  <div class="bg h-full w-full pt-8 md:pt-1 pb-11 px-5 flex flex-col">
+  <div class="bg h-full 2xl:h-screen w-full pt-8 md:pt-1 pb-11 px-5 flex flex-col">
     <div
       class="text-white self-end flex justify-center items-center bg-[#000000] rounded-xl p-2 w-[100px]"
     >

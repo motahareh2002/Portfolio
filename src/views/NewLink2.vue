@@ -1,6 +1,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import PanelLayout from "@/layouts/PanelLayout.vue";
 import MenuLeft from "@/components/MenuLeft.vue";
 import HeaderPanel from "@/components/HeaderPanel.vue";
 import UserInfro from "@/components/UserInfo.vue";
@@ -32,126 +33,118 @@ const selectBtn = ref(0);
 
 
 <template>
-  <div class="flex items-start h-screen">
-    <MenuLeft class="" />
-    <div class="w-full">
-      <HeaderPanel :title="title" :is-pic="false" />
-      <div class="md:w-[73%]">
-        <div
-          class="mt-5 px-3 overflow-y-scroll h-[800px] md:h-[540px] xl:h-[620px]"
-        >
-          <form action="" class="w-full">
-            <div class="w-full flex justify-between items-center">
-              <div class="flex flex-col w-3/4">
+  <PanelLayout>
+        <HeaderPanel :title="title" :is-pic="false" />
+        <div class="md:w-[65%] lg:w-[67%] xl:w-[69%] md:ml-20">
+          <div
+            class="overflow-y-scroll md:h-[520px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px] my-5 px-3"
+          >
+            <form action="" class="w-full">
+              <div class="w-full flex justify-between items-center">
+                <div class="flex flex-col w-3/4">
+                  <label for="" class="mb-1 text-[13px] lg:text-[15px]"
+                    >Title</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Title"
+                    v-model="titleInput"
+                    class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-[9px] text-[12px] lg:text-[14px]"
+                  />
+                </div>
+                <button
+                  :class="{ btnBg: titleInput.length }"
+                  class="bg-[#C9C9C9] mt-5 text-white w-1/4 ml-5 py-2.5 md:py-2 lg:p-3 rounded-[30px]"
+                >
+                  Add
+                </button>
+              </div>
+              <div class="flex flex-col mt-3">
                 <label for="" class="mb-1 text-[13px] lg:text-[15px]"
-                  >Title</label
+                  >URL</label
                 >
                 <input
                   type="text"
-                  placeholder="Title"
-                  v-model="titleInput"
+                  placeholder="URL"
+                  v-model="url"
                   class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-[9px] text-[12px] lg:text-[14px]"
                 />
               </div>
+            </form>
+            <div class="grid grid-cols-4 gap-2 mt-5 xl:w-1/3">
               <button
-                :class="{ btnBg: titleInput.length }"
-                class="bg-[#C9C9C9] mt-5 text-white w-1/4 ml-5 py-2.5 md:py-2 lg:p-3 rounded-[30px]"
+                v-for="(btn, i) in btns"
+                :key="i"
+                class="bg-[#D9D9D9] flex flex-col items-center p-3 rounded-[10px]"
+                @click="selectBtn = i"
+                :class="{ btnBg: selectBtn === i }"
               >
-                Add
+                <img :src="btn.srcHover" alt="" v-if="selectBtn === i" />
+                <img :src="btn.img" alt="" v-else />
+                <span
+                  class="text-[12px]"
+                  :class="{ 'text-white': selectBtn === i }"
+                  >{{ btn.title }}</span
+                >
               </button>
             </div>
-            <div class="flex flex-col mt-3">
-              <label for="" class="mb-1 text-[13px] lg:text-[15px]">URL</label>
-              <input
-                type="text"
-                placeholder="URL"
-                v-model="url"
-                class="focus:outline-none border border-[#ADADAD] w-full p-3 rounded-[9px] text-[12px] lg:text-[14px]"
-              />
-            </div>
-          </form>
-          <div class="grid grid-cols-4 gap-2 mt-5 xl:w-1/3">
-            <button
-              v-for="(btn, i) in btns"
-              :key="i"
-              class="bg-[#D9D9D9] flex flex-col items-center p-3 rounded-[10px]"
-              @click="selectBtn = i"
-              :class="{ btnBg: selectBtn === i }"
+            <div
+              class="bg-[#F7F6F2] rounded-[20px] px-5 py-3 md:px-8 md:pt-10 mt-5"
             >
-              <img :src="btn.srcHover" alt="" v-if="selectBtn === i" />
-              <img :src="btn.img" alt="" v-else />
-              <span
-                class="text-[12px]"
-                :class="{ 'text-white': selectBtn === i }"
-                >{{ btn.title }}</span
-              >
-            </button>
-          </div>
-          <div
-            class="bg-[#F7F6F2] rounded-[20px] px-5 py-3 md:px-8 md:pt-10 mt-5"
-          >
-            <div class="md:flex justify-between items-center">
-              <div class="flex items-center">
-                <input type="radio" name="radio" />
-                <div class="flex flex-col ml-5">
-                  <span class="text-[16px] md:text-[18px]  font-medium">Classic</span>
-                  <span class="text-[14px]"
-                    >Efficient, direct and compact.</span
-                  >
-                </div>
-              </div>
-              <div
-                class="bg-[#000000] w-full md:w-1/2 lg:w-1/3 flex justify-between items-center px-5 py-1.5 mt-8 md:mt-0 rounded-[30px] text-white"
-              >
-                <img src="../assets/Rectangle 39262.svg" alt="" class="w-8" />
-                <span class="text-[11px]">Title</span>
-                <img src="../assets/morewhite.svg" alt="" class="" />
-              </div>
-            </div>
-            <hr class="mt-3 border border-[#cdcdcc]" />
-            <div class="mt-5 md:flex justify-between" >
-              <div class="md:flex flex-col items-start justify-between">
-                <div class="flex items-start ">
+              <div class="md:flex justify-between items-center">
+                <div class="flex items-center">
                   <input type="radio" name="radio" />
                   <div class="flex flex-col ml-5">
-                    <span class="text-[16px] md:text-[18px] font-medium">Featured</span>
+                    <span class="text-[16px] md:text-[18px] font-medium"
+                      >Classic</span
+                    >
                     <span class="text-[14px]"
-                      >Make your link stand out with a larger, more attractive
-                      display.</span
+                      >Efficient, direct and compact.</span
                     >
                   </div>
                 </div>
-                <button
-                  class="text-[#4D7EFF] text-[12px] mt-3 hidden ml-7 md:block"
+                <div
+                  class="bg-[#000000] w-full md:w-1/2 lg:w-1/3 flex justify-between items-center px-5 py-1.5 mt-8 md:mt-0 rounded-[30px] text-white"
                 >
+                  <img src="../assets/Rectangle 39262.svg" alt="" class="w-8" />
+                  <span class="text-[11px]">Title</span>
+                  <img src="../assets/morewhite.svg" alt="" class="" />
+                </div>
+              </div>
+              <hr class="mt-3 border border-[#cdcdcc]" />
+              <div class="mt-5 md:flex justify-between">
+                <div class="md:flex flex-col items-start justify-between">
+                  <div class="flex items-start">
+                    <input type="radio" name="radio" />
+                    <div class="flex flex-col ml-5">
+                      <span class="text-[16px] md:text-[18px] font-medium"
+                        >Featured</span
+                      >
+                      <span class="text-[14px]"
+                        >Make your link stand out with a larger, more attractive
+                        display.</span
+                      >
+                    </div>
+                  </div>
+                  <button
+                    class="text-[#4D7EFF] text-[12px] mt-3 hidden ml-7 md:block"
+                  >
+                    Add Thumbnail
+                  </button>
+                </div>
+                <img
+                  src="../assets/Group 298.svg"
+                  alt=""
+                  class="mt-5 md:mt-0 md:w-1/2 lg:w-1/3"
+                />
+                <button class="text-[#4D7EFF] text-[12px] mt-3 md:hidden">
                   Add Thumbnail
                 </button>
               </div>
-              <img
-                src="../assets/Group 298.svg"
-                alt=""
-                class="mt-5 md:mt-0 md:w-1/2 lg:w-1/3"
-              />
-              <button class="text-[#4D7EFF] text-[12px] mt-3 md:hidden">
-                Add Thumbnail
-              </button>
             </div>
           </div>
-        </div>
-        <UserInfro
-          class="fixed right-0 top-14 bottom-0 hidden md:block"
-          :avator="info.avator"
-          :title="info.title"
-          :description="info.description"
-          :social1="info.social1"
-          :social2="info.social2"
-          :social3="info.social3"
-          :social4="info.social4"
-        />
-      </div>
-    </div>
-    <BtnPreview />
-  </div>
+          </div>
+  </PanelLayout>
 </template>
 
 <style scoped>
