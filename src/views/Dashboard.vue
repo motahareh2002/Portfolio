@@ -13,7 +13,7 @@ const title = ref("Links");
     <HeaderPanel :title="title" :is-pic="true" />
     <div class="md:w-[65%] lg:w-[67%] xl:w-[69%] md:ml-20">
       <div
-        class="overflow-y-scroll md:h-[520px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px] my-5 px-3"
+        class="overflow-y-scroll heigth h-[430px] md:h-[520px] lg:h-[480px] xl:h-[550px] 2xl:h-[650px] my-5 px-3"
       >
         <div class="hidden md:flex items-center">
           <div class="relative w-1/5 lg:w-2/12">
@@ -165,5 +165,20 @@ const title = ref("Links");
   background-color: #0b0b0f;
   border-radius: 10px;
   border: 5px inset #ffffff;
+}
+@media only screen and (min-width: 1536px) {
+  .heigth{
+    height: 615px;
+  }
+}
+@media only screen and (min-width: 1550px) {
+  .heigth{
+    height: 680px;
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .heigth{
+    height: 760px;
+  }
 }
 </style>

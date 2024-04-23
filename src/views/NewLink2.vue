@@ -37,7 +37,7 @@ const selectBtn = ref(0);
         <HeaderPanel :title="title" :is-pic="false" />
         <div class="md:w-[65%] lg:w-[67%] xl:w-[69%] md:ml-20">
           <div
-            class="overflow-y-scroll md:h-[520px] lg:h-[480px] xl:h-[500px] 2xl:h-[650px] my-5 px-3"
+            class="overflow-y-scroll heigth  md:h-[520px] lg:h-[480px] xl:h-[550px] 2xl:h-[650px] my-5 px-3"
           >
             <form action="" class="w-full">
               <div class="w-full flex justify-between items-center">
@@ -148,6 +148,22 @@ const selectBtn = ref(0);
 </template>
 
 <style scoped>
+
+@media only screen and (min-width: 1536px) {
+  .heigth{
+    height: 615px;
+  }
+}
+@media only screen and (min-width: 1550px) {
+  .heigth{
+    height: 680px;
+  }
+}
+@media only screen and (min-width: 1650px) {
+  .heigth{
+    height: 760px;
+  }
+}
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {

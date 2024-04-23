@@ -7,15 +7,7 @@ import face from "@/assets/facebook.svg";
 
 <template>
   <div
-    style="
-      background: rgb(29, 64, 18);
-      background: linear-gradient(
-        25deg,
-        rgba(29, 64, 18, 1) 0%,
-        rgba(11, 11, 15, 1) 15%
-      );
-    "
-    class="flex justify-center px-10 text-center items-center flex-col py-10"
+    class="flex bg justify-center px-10 text-center items-center flex-col py-10"
   >
     <p class="font-black text-white text-[12px] md:text-[14px]">
       Links to your social media profiles for further engagement.
@@ -32,3 +24,10 @@ import face from "@/assets/facebook.svg";
     </p>
   </div>
 </template>
+
+<style scoped>
+.bg{
+  background: url('/src/assets/bgFooter.svg') no-repeat;
+  background-size: cover;
+}
+</style>

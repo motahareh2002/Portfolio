@@ -321,7 +321,7 @@ import Header from "@/components/Header.vue";
       </div>
     </div>
     <div class="md:hidden">
-      <div class="bg-[#0b0b0f] pt-56 sm:-mt-[80%] pb-32">
+      <div class="bg-[#0b0b0f] pt-[30rem] sm:-mt-[80%] pb-32">
         <p class="p-10  font-black  text-white leading-6 text-center text-[12px]">
           Join our pioneering social media platform where followers and
           influencers securely communicate, exchanging ideas and tasks, seizing

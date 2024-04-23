@@ -14,7 +14,7 @@ const socials = ref([
 
 
 <template>
-  <div class="bg h-full 2xl:h-screen w-full pt-8 md:pt-1 pb-11 px-5 flex flex-col">
+  <div class="bg  pt-8 md:pt-1 pb-80 md:pb-32 xl:pb-20 px-5 flex flex-col">
     <div
       class="text-white self-end flex justify-center items-center bg-[#000000] rounded-xl p-2 w-[100px]"
     >
@@ -32,11 +32,11 @@ const socials = ref([
       >
         fitness model, and personal trainer
       </span>
-      <div class="flex flex-col md:mt-5 w-full mt-3">
+      <div class="flex flex-col md:mt-5 w-full mt-5">
         <span
           v-for="(social, i) in socials"
           :key="i"
-          class="bg-[#000000] w-3/4 lg:w-1/5 xl:w-1/6 mx-auto rounded-[55px] text-white text-center mt-2 py-3"
+          class="bg-[#000000] w-3/4 lg:w-1/5 xl:w-1/6 mx-auto rounded-[55px] text-white text-center mt-2 py-4"
           >{{ social }}</span
         >
       </div>
@@ -50,7 +50,7 @@ const socials = ref([
         style="
           background: linear-gradient(225deg, #18c8ff 14.89%, #933ffe 85.85%);
         "
-        class="mt-5 md:mt-20 p-2 text-white rounded-xl text-[12px]"
+        class="mt-10 w-3/4 md:w-1/2 lg:w-[15%] md:mt-12 p-3 text-white rounded-xl text-[12px]"
       >
         Creat your GeeG Link
       </button>
@@ -64,5 +64,13 @@ const socials = ref([
   background: url("/src/assets/userPic.svg") rgba(58, 58, 58, 0.7) no-repeat 50%;
   background-blend-mode: darken;
   background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+@media only screen and (min-width: 1500px) {
+  .bg {
+    width: 100vw;
+  height: 100vh;
+  }
 }
 </style>
